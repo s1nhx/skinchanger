@@ -28,7 +28,7 @@ void changeskin(int params) {
 		}
 	}
 	else { // if player IS in air
-		SAMP::pSAMP->addMessageToChat(-1, "[skinchanger FIXED 1.2] èñïîëüçîâàíèå êîìàíäû â âîçäóõå çàïğåùåíî.");
+		SAMP::pSAMP->addMessageToChat(-1, "[skinchanger FIXED 1.3] Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã®Ã¢Ã Ã­Ã¨Ã¥ ÃªÃ®Ã¬Ã Ã­Ã¤Ã» Ã¢ Ã¢Ã®Ã§Ã¤Ã³ÃµÃ¥ Ã§Ã Ã¯Ã°Ã¥Ã¹Ã¥Ã­Ã®.");
 	}
 }
 
@@ -73,7 +73,7 @@ void __stdcall GameLoop() {
 		if (SAMP::pSAMP->LoadAPI()) {
 			initialized = true;
 			isPluginInitialized = true;
-			SAMP::pSAMP->addMessageToChat(-1, "[skinchanger FIXED 1.2] loaded. cmd:  /sskin [id]  | vk/@sinhxxx");
+			SAMP::pSAMP->addMessageToChat(-1, "[skinchanger FIXED 1.3] loaded. cmd:  /sskin [id]  | vk/@sinhxxx");
 			SAMP::pSAMP->addClientCommand("sskin", cmd);
 		}
 	}
