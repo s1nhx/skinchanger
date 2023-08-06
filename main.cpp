@@ -28,7 +28,7 @@ void changeskin(int params) {
 		}
 	}
 	else { // if player IS in air
-		SAMP::pSAMP->addMessageToChat(-1, "[skinchanger FIXED 1.3.1] использование команды в воздухе запрещено.");
+		SAMP::pSAMP->addMessageToChat(-1, "[skinchanger 1.3.2] использование команды в воздухе запрещено.");
 	}
 }
 
@@ -55,9 +55,9 @@ bool __stdcall RakClientRPCRecvHook(SAMP::CallBacks::HookedStructs::stRakClientR
 			// .Magnitude() would be fine too
 			CVector vecNewPlayerPos = CVector(setPlayerPosData.x, setPlayerPosData.y, setPlayerPosData.z) - vecPlayerCoors;
 
-			if (vecNewPlayerPos.x > 20.0 && // some important teleports may be interrupted, so..
-				vecNewPlayerPos.y > 20.0 &&
-				vecNewPlayerPos.z > 20.0) {
+			if (vecNewPlayerPos.x > 20.0 || // some important teleports may be interrupted, so..
+				vecNewPlayerPos.y > 20.0 || // 1.3.2: иногда стоит напоминать себе, что && и || ЭТО РАЗНЫЕ, СУКА, ВЕЩИ..
+				vecNewPlayerPos.z > 20.0) { // ..ну или просто пора перестать писать апдейты в 4 утра...
 					rpc_process(skinID);
 			}
 	}
@@ -74,7 +74,7 @@ void __stdcall GameLoop() {
 		if (SAMP::pSAMP->LoadAPI()) {
 			initialized = true;
 			isPluginInitialized = true;
-			SAMP::pSAMP->addMessageToChat(-1, "[skinchanger FIXED 1.3.1] loaded. cmd:  /sskin [id]  | vk/@sinhxxx");
+			SAMP::pSAMP->addMessageToChat(-1, "[skinchanger 1.3.2] loaded. cmd:  /sskin [id]  | vk/@sinhxxx");
 			SAMP::pSAMP->addClientCommand("sskin", cmd);
 		}
 	}
